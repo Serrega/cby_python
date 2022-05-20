@@ -40,11 +40,9 @@ if __name__ == '__main__':
     win_number = user_time.index(min(user_time))
     video_play()
     user_input = int(
-        input('Enter number of road, 1 - track, 2 - dirt road: '))
-    if user_input - 1 == win_number:
-        paint_pictures(True)
-    else:
-        paint_pictures(False)
+        input('Enter number of road, 0 - track, 1 - dirt road: '))
+    paint_pictures(user_time == win_number)
+
 
 
 
