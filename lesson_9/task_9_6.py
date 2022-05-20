@@ -39,7 +39,7 @@ if __name__ == '__main__':
     user_speed = randint(150, 250)
     user_time = (road[0] / user_speed, road[1] / user_speed)
     win_number = user_time.index(min(user_time))
-    # video_play()
+    video_play()
     user_input = int(
         input('Enter number of road, 0 - track, 1 - dirt road: '))
     print(win_number, user_input)
@@ -47,10 +47,6 @@ if __name__ == '__main__':
         paint_pictures()
     else:
         paint_pictures(False)
-
-
-
-
 
 
 

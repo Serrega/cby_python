@@ -1,10 +1,10 @@
-woman = ('ВА', 'НА', 'АЯ')
+woman = ('ва\n', 'на\n', 'ая\n')
 with open('surnames.txt', 'r', encoding='utf-8') as file_r, \
-        open('woman.txt', 'a', encoding='utf-8') as file_a:
-    content = file_r.readlines()
-    [file_a.writelines([i[0].casefold().capitalize() + '-' +
-                        i[2].casefold().capitalize()
-    if i[1] == '-' else i.casefold().capitalize() for i in
-        [line.partition('-') if '-' in line else line for line in content]])
-            for line in content if line[-3:-1] in woman]
-
+        open('woman.txt', 'a', encoding='utf-8') as woman_a, \
+        open('man.txt', 'a', encoding='utf-8') as man_a:
+    for line in file_r.readlines():
+        line = line.title()
+        if line.endswith(woman[0]) or line.endswith(woman[1]) or line.endswith(woman[2]):
+            woman_a.writelines(line)
+        else:
+            man_a.writelines(line)
