@@ -21,7 +21,8 @@ def video_play():
     pyglet.app.run()
 
 
-def paint_pictures(win: bool):
+def paint_pictures(win=True):
+    print(win)
     try:
         with open('result.txt', 'r', encoding='utf-8') as file_r:
             content = file_r.readlines()
@@ -38,10 +39,14 @@ if __name__ == '__main__':
     user_speed = randint(150, 250)
     user_time = (road[0] / user_speed, road[1] / user_speed)
     win_number = user_time.index(min(user_time))
-    video_play()
+    # video_play()
     user_input = int(
         input('Enter number of road, 0 - track, 1 - dirt road: '))
-    paint_pictures(user_time == win_number)
+    print(win_number, user_input)
+    if user_input == win_number:
+        paint_pictures()
+    else:
+        paint_pictures(False)
 
 
 
