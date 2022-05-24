@@ -4,7 +4,7 @@ with open('surnames.txt', 'r', encoding='utf-8') as file_r, \
         open('man.txt', 'a', encoding='utf-8') as man_a:
     for line in file_r.readlines():
         line = line.title()
-        if line.endswith(woman[0]) or line.endswith(woman[1]) or line.endswith(woman[2]):
+        if line.endswith(('ва\n','на\n','ая\n')):
             woman_a.writelines(line)
         else:
             man_a.writelines(line)
