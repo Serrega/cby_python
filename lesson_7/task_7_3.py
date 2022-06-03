@@ -12,3 +12,8 @@ print(result)
 
 print(my_digital_output('Easy Task'))
 
+
+def printing(text):
+    first_line = "+-"*len(text) + "+"
+    second_line = "|" + "|".join(text) + "|"
+    return "\n".join((first_line, second_line, first_line))
