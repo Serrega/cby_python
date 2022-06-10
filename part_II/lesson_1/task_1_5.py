@@ -23,7 +23,10 @@ class RandomNum:
             print(f'Completed in: {time.time() - start:.2f} sec.')
         return speed
 
+    @timer
     def construct(self) -> list:
+        print('Start process...')
+        print(f'Количество комбинаций: {self.num_comb}')
         for comb in itertools.product(string.digits, repeat=self.length):
             p = ''.join(comb)
             with open(f'task4_{p}.tmp', 'w') as file_w:
@@ -31,8 +34,6 @@ class RandomNum:
 
     @timer
     def write_file(self):
-        print('Start process...')
-        print(f'Количество комбинаций: {self.num_comb}')
         with open(f'num_dict{str(self.length)}.txt', 'a') as file_a:
             while glob.glob('./task4_*.tmp'):
                 rand_list = set([str(random.randint(0, self.num_comb - 1)
