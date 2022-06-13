@@ -2,4 +2,5 @@ import os
 
 
 if __name__ == '__main__':
-    os.system('ls -l')
+    print('Права текущей директории: ')
+    print(os.system('ls -noad | cut -f1 -d" "'))
